@@ -4,10 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="favicon.ico" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/Style.css">
+<link rel="stylesheet" type="text/css" href="css/Style.css">
 <meta charset="ISO-8859-1">
 <title>Quem fará o café?</title>
 </head>
