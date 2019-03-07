@@ -19,7 +19,7 @@
 
 		<property name="hbm2ddl.auto">update</property>
 
-		<mapping class="model.Pessoa" />
+		<mapping class="br.com.vitor.model.Pessoa" />
 	</session-factory>
 
 </hibernate-configuration>
