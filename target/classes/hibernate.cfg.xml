@@ -6,7 +6,7 @@
 <hibernate-configuration>
 
 	<session-factory>
-
+		<!--Propriedades de conexao com o banco -->
 		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://localhost:3306/vitao?serverTimezone=UTC</property>
 		<property name="connection.username">root</property>
@@ -17,9 +17,10 @@
 
 		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 
 		<mapping class="br.com.vitor.model.Pessoa" />
+		<mapping class="br.com.vitor.model.UltimoEscolhidoCafe" />
 	</session-factory>
 
 </hibernate-configuration>

@@ -8,7 +8,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/Style.css">
 <meta charset="ISO-8859-1">
-<title>.:VITAO:.</title>
+<title>.:Café:.</title>
 </head>
 <body class="centraliza">
 	<c:if test="${alerta != null}">
@@ -18,7 +18,10 @@
 		</div>
 	</c:if>
 	<br>
-	<h1 class="centraliza">Pessoas - Vitor Paulo</h1>
+	<h1 class="centraliza">Who will make the coffe?</h1>
+	<div class="div-cafe">
+		<button class="btn btn-dark btn-cafe" type="submit" onClick="window.location.href='../vitor/geracafe';">Escolher Quem vai fazer o cafe!</button>
+	</div>
 	<hr>
 	<form action="../vitor/" method="post">
 		<div class="input-group mb-3">

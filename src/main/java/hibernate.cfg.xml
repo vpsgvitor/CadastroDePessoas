@@ -17,9 +17,10 @@
 
 		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 
 		<mapping class="br.com.vitor.model.Pessoa" />
+		<mapping class="br.com.vitor.model.UltimoEscolhidoCafe" />
 	</session-factory>
 
 </hibernate-configuration>
