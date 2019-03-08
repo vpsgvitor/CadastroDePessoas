@@ -1,5 +1,7 @@
 package br.com.vitor.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,7 +11,12 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({ @NamedQuery(name = "Pessoa.listar", query = "SELECT pessoa FROM Pessoa pessoa"),
 		@NamedQuery(name = "Pessoa.buscarPorId", query = "SELECT pessoa FROM Pessoa pessoa where id = :id") })
-public class Pessoa {
+public class Pessoa implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue
 	private Integer id;

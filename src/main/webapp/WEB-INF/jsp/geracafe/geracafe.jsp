@@ -8,12 +8,20 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <link rel="stylesheet" type="text/css" href="css/Style.css">
+<script src="js/script.js"></script>
 <meta charset="ISO-8859-1">
 <title>Quem fará o café?</title>
 </head>
 <body class="centraliza">
-	<h1>ID = ${pessoa.id} and Nome= ${pessoa.nome}</h1>
+	<h1>Sortear o cafeteiro</h1>
+	<hr>
+	<div id="Meu"></div>
+
+	<button type="submit" onclick="sortear()" class="btn btn-secundary">Salvar</button>
 
 	<div>
 		<table class="table table-striped table-hover">
@@ -21,12 +29,14 @@
 				<tr>
 					<th scope="row">ID</th>
 					<th scope="row">Nome</th>
+					<th scope="row">Data</th>
 				</tr>
 			</thead>
 			<c:forEach var="ultimo" items="${ultimos}">
 				<tr>
 					<td>${ultimo.idUser}</td>
 					<td>${ultimo.nome}</td>
+					<td>${ultimo.dataCadastroFormatado}</td>
 				</tr>
 			</c:forEach>
 		</table>

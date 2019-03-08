@@ -20,6 +20,11 @@ public class LogCafeDao {
 		List<UltimoEscolhidoCafe> ultimos = null;
 		Query consulta = session.getNamedQuery("UltimoEscolhidoCafe.ultimos");
 		ultimos = consulta.list();
+		if (!ultimos.isEmpty()) {
+			for (UltimoEscolhidoCafe u : ultimos) {
+				u.getData().setDate(u.getData().getDate() + 1);
+			}
+		}
 		session.close();
 		return ultimos;
 	}
