@@ -43,7 +43,6 @@ public class GeracafeController {
 				result.use(Results.json()).withoutRoot().from(p).serialize();
 				return p;
 			}
-
 		} else {
 			p = new Pessoa("Nenhuma Pessoa Cadastrada");
 			result.use(Results.json()).withoutRoot().from(p).serialize();
@@ -57,10 +56,7 @@ public class GeracafeController {
 		List<UltimoEscolhidoCafe> u = LogDao.listar();
 		if (!u.isEmpty()) {
 			result.use(Results.json()).from(u.get(0)).serialize();
-			return u.get(0);
-		} else {
-			return null;
 		}
-
+		return u.get(0);
 	}
 }

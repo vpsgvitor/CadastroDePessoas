@@ -15,7 +15,7 @@ function sortear() {
 
 	setTimeout(function() {
 		adicionarNaTabela();
-	}, 1000);
+	}, 800);
 }
 function adicionarNaTabela() {
 	$.get("listar", function(retorno) {

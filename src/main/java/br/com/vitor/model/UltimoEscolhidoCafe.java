@@ -21,12 +21,9 @@ import javax.persistence.TemporalType;
 public class UltimoEscolhidoCafe {
 
 	public UltimoEscolhidoCafe() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public UltimoEscolhidoCafe(Integer id, Integer idUser, String nome, Date data) {
-		super();
 		this.id = id;
 		this.idUser = idUser;
 		this.nome = nome;
@@ -34,7 +31,6 @@ public class UltimoEscolhidoCafe {
 	}
 
 	public UltimoEscolhidoCafe(Integer idUser, String nome, LocalDate data) {
-		super();
 		this.data = Date.from(data.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		this.idUser = idUser;
 		this.nome = nome;

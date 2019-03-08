@@ -20,7 +20,7 @@
 	<h1>Sortear o cafeteiro</h1>
 	<hr>
 	<div id="Meu"></div>
-	<button type="submit" onclick="sortear();adicionarNaTabela();"
+	<button type="submit" onclick="sortear();"
 		class="btn-sorteio btn btn-dark">Clique aqui para sortear um
 		cafeteiro</button>
 	<div>

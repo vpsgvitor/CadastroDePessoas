@@ -54,10 +54,5 @@
 			</c:forEach>
 		</table>
 	</div>
-
-	<hr>
-
-
-
 </body>
 </html>
