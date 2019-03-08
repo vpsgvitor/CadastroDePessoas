@@ -17,8 +17,12 @@ public class GeracafeService {
 
 	public Pessoa selecaoAleatoria() {
 		List<Pessoa> pessoas = dao.listar();
-		Collections.shuffle(pessoas);
-		return pessoas.get(0);
+		if (!pessoas.isEmpty()) {
+			Collections.shuffle(pessoas);
+			return pessoas.get(0);
+		} else {
+			return null;
+		}
 	}
 
 	public boolean JaFoiEscolhido(LocalDate data) {
@@ -33,7 +37,5 @@ public class GeracafeService {
 		} else {
 			return false;
 		}
-
 	}
-
 }

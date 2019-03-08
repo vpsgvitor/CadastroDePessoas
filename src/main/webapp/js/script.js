@@ -15,7 +15,7 @@ function sortear() {
 
 	setTimeout(function() {
 		adicionarNaTabela();
-	}, 500);
+	}, 1000);
 }
 function adicionarNaTabela() {
 	$.get("listar", function(retorno) {
@@ -27,7 +27,7 @@ function adicionarNaTabela() {
 			let tdNome = $('<td>');
 			let tdData = $('<td>');
 
-			tdId.html(pessoa.id);
+			tdId.html(pessoa.idUser);
 			tdNome.html(pessoa.nome);
 			tdData.html(pessoa.data.$);
 
@@ -35,7 +35,6 @@ function adicionarNaTabela() {
 			tr.append(tdNome);
 			tr.append(tdData);
 			$("#tbodyTabelaUltimos").append(tr);
-
 		});
 	})
 }

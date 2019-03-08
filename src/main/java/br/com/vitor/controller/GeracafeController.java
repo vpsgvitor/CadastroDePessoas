@@ -19,10 +19,11 @@ public class GeracafeController {
 	@Inject
 	Result result;
 	GeracafeService gs = new GeracafeService();
-	LogCafeDao LogDao = new LogCafeDao();
+	LogCafeDao LogDao;
 
 	@Get("/geracafe")
 	public void geracafe() {
+		LogDao = new LogCafeDao();
 		if (LogDao.listar() != null) {
 			result.include("ultimos", LogDao.listar());
 		}
@@ -30,14 +31,21 @@ public class GeracafeController {
 
 	@Get("/gerar")
 	public Pessoa gerar() {
-		Pessoa p = null;
-		if (!gs.JaFoiEscolhido(LocalDate.now())) {
-			p = gs.selecaoAleatoria();
-			LogDao.salvar(new UltimoEscolhidoCafe(p.getId(), p.getnome(), LocalDate.now()));
-			result.use(Results.json()).withoutRoot().from(p).serialize();
-			return p;
+		LogDao = new LogCafeDao();
+		Pessoa p = gs.selecaoAleatoria();
+		if (p != null) {
+			if (!gs.JaFoiEscolhido(LocalDate.now())) {
+				LogDao.salvar(new UltimoEscolhidoCafe(p.getId(), p.getnome(), LocalDate.now()));
+				result.use(Results.json()).withoutRoot().from(p).serialize();
+				return p;
+			} else {
+				p = new Pessoa("Hoje já foi feita a escolha, não adianta trapacear hehe");
+				result.use(Results.json()).withoutRoot().from(p).serialize();
+				return p;
+			}
+
 		} else {
-			p = new Pessoa("Hoje já foi feita a escolha, não adianta trapacear hehe");
+			p = new Pessoa("Nenhuma Pessoa Cadastrada");
 			result.use(Results.json()).withoutRoot().from(p).serialize();
 			return p;
 		}
@@ -45,10 +53,14 @@ public class GeracafeController {
 
 	@Get("/listar")
 	public UltimoEscolhidoCafe listar() {
+		LogDao = new LogCafeDao();
 		List<UltimoEscolhidoCafe> u = LogDao.listar();
 		if (!u.isEmpty()) {
 			result.use(Results.json()).from(u.get(0)).serialize();
+			return u.get(0);
+		} else {
+			return null;
 		}
-		return u.get(0);
+
 	}
 }
