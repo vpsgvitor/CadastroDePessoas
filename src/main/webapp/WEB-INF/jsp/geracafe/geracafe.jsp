@@ -16,24 +16,39 @@
 <meta charset="ISO-8859-1">
 <title>Quem fará o café?</title>
 </head>
-<body class="centraliza" onLoad="adicionarNaTabela()">
-	<h1>Sortear o cafeteiro</h1>
-	<hr>
-	<div id="Meu"></div>
-	<button type="submit" onclick="sortear();"
-		class="btn-sorteio btn btn-dark">Clique aqui para sortear um
-		cafeteiro</button>
+<header>
 	<div>
-		<table class="table table-striped table-hover tabela-ultimos">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="row">ID</th>
-					<th scope="row">Nome</th>
-					<th scope="row">Data</th>
-				</tr>
-			</thead>
-			<tbody id="tbodyTabelaUltimos"></tbody>
-		</table>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="navbar-nav">
+				<a class="nav-link opcoes text-white h5" href="../vitor/">Pessoas</a>
+				<a class="nav-link opcoes text-white h5" href="../vitor/geracafe">Cafeteiro</a>
+			</div>
+			<h1 class="centraliza-h1 text-white">Who will make the coffee?</h1>
+
+		</nav>
 	</div>
+</header>
+<body onLoad="adicionarNaTabela()">
+	<div class="centraliza">
+		<h1>Sortear o cafeteiro</h1>
+		<hr>
+		<div id="Meu"></div>
+		<button type="submit" onclick="sortear();"
+			class="btn-sorteio btn btn-dark">Clique aqui para sortear um
+			cafeteiro</button>
+		<div>
+			<table class="table table-striped table-hover tabela-ultimos">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="row">ID</th>
+						<th scope="row">Nome</th>
+						<th scope="row">Data</th>
+					</tr>
+				</thead>
+				<tbody id="tbodyTabelaUltimos"></tbody>
+			</table>
+		</div>
+	</div>
+
 </body>
 </html>

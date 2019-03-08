@@ -36,6 +36,7 @@ public class GeracafeController {
 		if (p != null) {
 			if (!gs.JaFoiEscolhido(LocalDate.now())) {
 				LogDao.salvar(new UltimoEscolhidoCafe(p.getId(), p.getnome(), LocalDate.now()));
+				p.setnome("Cafeteiro do dia: " + p.getnome());
 				result.use(Results.json()).withoutRoot().from(p).serialize();
 				return p;
 			} else {

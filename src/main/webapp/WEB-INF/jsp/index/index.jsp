@@ -11,48 +11,61 @@
 <meta charset="ISO-8859-1">
 <title>.:Café:.</title>
 </head>
-<body class="centraliza">
-	<c:if test="${alerta != null}">
-		<div class="alert alert-warning alert-dismissible fade show"
-			role="alert">
-			<strong>Errou!!</strong> ${alerta}
-		</div>
-	</c:if>
-	<br>
-	<h1 class="centraliza">Who will make the coffee?</h1>
-	<div class="div-cafe">
-		<button class="btn btn-dark btn-cafe" type="submit"
-			onClick="window.location.href='../vitor/geracafe';">Escolher
-			quem vai fazer o cafe!</button>
-	</div>
-	<hr>
-	<form action="../vitor/" method="post">
-		<div class="input-group mb-3">
-			<input type="text" class="form-control" required
-				placeholder="Adicionar nova pessoa" aria-describedby="basic-addon2"
-				name="nome">
-			<div class="input-group-append">
-				<button class="btn btn-outline-secondary btn-dark" type="submit">Adicionar</button>
-			</div>
-		</div>
-	</form>
+<header>
 	<div>
-		<table class="table table-striped table-hover">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="row">ID</th>
-					<th scope="row">Nome <i>(Clique sobre o nome para as
-							opções)</i>
-					</th>
-				</tr>
-			</thead>
-			<c:forEach var="pessoa" items="${pessoas}">
-				<tr onClick="window.location.href='../vitor/editar/${pessoa.id}';">
-					<td>${pessoa.id}</td>
-					<td>${pessoa.nome}</td>
-				</tr>
-			</c:forEach>
-		</table>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="navbar-nav">
+				<a class="nav-link opcoes text-white h5" href="../vitor/">Pessoas</a>
+				<a class="nav-link opcoes text-white h5" href="../vitor/geracafe">Cafeteiro</a>
+			</div>
+			<h1 class="centraliza-h1 text-white">Who will make the coffee?</h1>
+		</nav>
 	</div>
+</header>
+<body>
+	<div class="centraliza">
+		<c:if test="${alerta != null}">
+			<div class="alert alert-warning alert-dismissible fade show"
+				role="alert">
+				<strong>Errou!!</strong> ${alerta}
+			</div>
+		</c:if>
+		<br>
+		<div class="div-cafe">
+			<button class="btn btn-dark btn-cafe" type="submit"
+				onClick="window.location.href='../vitor/geracafe';">Escolher
+				quem vai fazer o cafe!</button>
+		</div>
+		<hr>
+		<form action="../vitor/" method="post">
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" required
+					placeholder="Adicionar nova pessoa" aria-describedby="basic-addon2"
+					name="nome">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary btn-dark" type="submit">Adicionar</button>
+				</div>
+			</div>
+		</form>
+		<div>
+			<table class="table table-striped table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="row">ID</th>
+						<th scope="row">Nome <i>(Clique sobre o nome para as
+								opções)</i>
+						</th>
+					</tr>
+				</thead>
+				<c:forEach var="pessoa" items="${pessoas}">
+					<tr onClick="window.location.href='../vitor/editar/${pessoa.id}';">
+						<td>${pessoa.id}</td>
+						<td>${pessoa.nome}</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+	</div>
+
 </body>
 </html>
