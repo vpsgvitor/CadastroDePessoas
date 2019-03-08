@@ -1,6 +1,7 @@
 package br.com.vitor.controller;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -40,5 +41,14 @@ public class GeracafeController {
 			result.use(Results.json()).withoutRoot().from(p).serialize();
 			return p;
 		}
+	}
+
+	@Get("/listar")
+	public UltimoEscolhidoCafe listar() {
+		List<UltimoEscolhidoCafe> u = LogDao.listar();
+		if (!u.isEmpty()) {
+			result.use(Results.json()).from(u.get(0)).serialize();
+		}
+		return u.get(0);
 	}
 }

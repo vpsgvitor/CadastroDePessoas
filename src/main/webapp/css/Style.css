@@ -15,9 +15,16 @@
 	height: 50px;
 	font-size: 22px;
 }
-.div-cafe{
-	width: 100%;
-	height:40px;
+
+.btn-sorteio {
+	float: right;
+	height: 50px;
+	font-size: 22px;
 	margin-bottom: 30px;
-	
+}
+
+.div-cafe {
+	width: 100%;
+	height: 40px;
+	margin-bottom: 30px;
 }

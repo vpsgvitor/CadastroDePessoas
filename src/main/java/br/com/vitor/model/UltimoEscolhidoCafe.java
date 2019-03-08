@@ -30,6 +30,7 @@ public class UltimoEscolhidoCafe {
 		this.id = id;
 		this.idUser = idUser;
 		this.nome = nome;
+		this.data = data;
 	}
 
 	public UltimoEscolhidoCafe(Integer idUser, String nome, LocalDate data) {

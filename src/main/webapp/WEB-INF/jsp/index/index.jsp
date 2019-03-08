@@ -23,7 +23,7 @@
 	<div class="div-cafe">
 		<button class="btn btn-dark btn-cafe" type="submit"
 			onClick="window.location.href='../vitor/geracafe';">Escolher
-			Quem vai fazer o cafe!</button>
+			quem vai fazer o cafe!</button>
 	</div>
 	<hr>
 	<form action="../vitor/" method="post">
@@ -56,7 +56,7 @@
 	</div>
 
 	<hr>
-	
+
 
 
 </body>

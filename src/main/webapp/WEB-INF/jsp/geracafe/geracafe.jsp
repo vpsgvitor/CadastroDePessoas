@@ -16,15 +16,15 @@
 <meta charset="ISO-8859-1">
 <title>Quem fará o café?</title>
 </head>
-<body class="centraliza">
+<body class="centraliza" onLoad="adicionarNaTabela()">
 	<h1>Sortear o cafeteiro</h1>
 	<hr>
 	<div id="Meu"></div>
-
-	<button type="submit" onclick="sortear()" class="btn btn-secundary">Salvar</button>
-
+	<button type="submit" onclick="sortear();adicionarNaTabela();"
+		class="btn-sorteio btn btn-dark">Clique aqui para sortear um
+		cafeteiro</button>
 	<div>
-		<table class="table table-striped table-hover">
+		<table class="table table-striped table-hover tabela-ultimos">
 			<thead class="thead-dark">
 				<tr>
 					<th scope="row">ID</th>
@@ -32,13 +32,7 @@
 					<th scope="row">Data</th>
 				</tr>
 			</thead>
-			<c:forEach var="ultimo" items="${ultimos}">
-				<tr>
-					<td>${ultimo.idUser}</td>
-					<td>${ultimo.nome}</td>
-					<td>${ultimo.dataCadastroFormatado}</td>
-				</tr>
-			</c:forEach>
+			<tbody id="tbodyTabelaUltimos"></tbody>
 		</table>
 	</div>
 </body>
